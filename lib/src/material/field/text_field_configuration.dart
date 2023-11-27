@@ -4,6 +4,8 @@ import 'package:flutter/services.dart';
 /// Supply an instance of this class to the [TypeAhead.textFieldConfiguration]
 /// property to configure the displayed text field
 class TextFieldConfiguration {
+  final TextSelectionControls? selectionControls;
+
   /// The decoration to show around the text field.
   ///
   /// Same as [TextField.decoration](https://docs.flutter.io/flutter/material/TextField/decoration.html)
@@ -202,41 +204,44 @@ class TextFieldConfiguration {
     this.textDirection,
     this.scrollPadding = const EdgeInsets.all(20.0),
     this.enableInteractiveSelection = true,
+    this.selectionControls,
   });
 
   /// Copies the [TextFieldConfiguration] and only changes the specified
   /// properties
-  TextFieldConfiguration copyWith(
-      {InputDecoration? decoration,
-        TextStyle? style,
-        TextEditingController? controller,
-        ValueChanged<String>? onChanged,
-        ValueChanged<String>? onSubmitted,
-        bool? obscureText,
-        MaxLengthEnforcement? maxLengthEnforcement,
-        int? maxLength,
-        int? maxLines,
-        int? minLines,
-        bool? autocorrect,
-        List<TextInputFormatter>? inputFormatters,
-        bool? autofocus,
-        TextInputType? keyboardType,
-        bool? enabled,
-        bool? enableSuggestions,
-        TextAlign? textAlign,
-        FocusNode? focusNode,
-        Color? cursorColor,
-        TextAlignVertical? textAlignVertical,
-        Radius? cursorRadius,
-        double? cursorWidth,
-        Brightness? keyboardAppearance,
-        VoidCallback? onEditingComplete,
-        GestureTapCallback? onTap,
-        EdgeInsets? scrollPadding,
-        TextCapitalization? textCapitalization,
-        TextDirection? textDirection,
-        TextInputAction? textInputAction,
-        bool? enableInteractiveSelection}) {
+  TextFieldConfiguration copyWith({
+    InputDecoration? decoration,
+    TextStyle? style,
+    TextEditingController? controller,
+    ValueChanged<String>? onChanged,
+    ValueChanged<String>? onSubmitted,
+    bool? obscureText,
+    MaxLengthEnforcement? maxLengthEnforcement,
+    int? maxLength,
+    int? maxLines,
+    int? minLines,
+    bool? autocorrect,
+    List<TextInputFormatter>? inputFormatters,
+    bool? autofocus,
+    TextInputType? keyboardType,
+    bool? enabled,
+    bool? enableSuggestions,
+    TextAlign? textAlign,
+    FocusNode? focusNode,
+    Color? cursorColor,
+    TextAlignVertical? textAlignVertical,
+    Radius? cursorRadius,
+    double? cursorWidth,
+    Brightness? keyboardAppearance,
+    VoidCallback? onEditingComplete,
+    GestureTapCallback? onTap,
+    EdgeInsets? scrollPadding,
+    TextCapitalization? textCapitalization,
+    TextDirection? textDirection,
+    TextInputAction? textInputAction,
+    bool? enableInteractiveSelection,
+    TextSelectionControls? selectionControls,
+  }) {
     return TextFieldConfiguration(
       decoration: decoration ?? this.decoration,
       style: style ?? this.style,
@@ -268,7 +273,8 @@ class TextFieldConfiguration {
       textInputAction: textInputAction ?? this.textInputAction,
       textDirection: textDirection ?? this.textDirection,
       enableInteractiveSelection:
-      enableInteractiveSelection ?? this.enableInteractiveSelection,
+          enableInteractiveSelection ?? this.enableInteractiveSelection,
+      selectionControls: selectionControls ?? this.selectionControls,
     );
   }
 }

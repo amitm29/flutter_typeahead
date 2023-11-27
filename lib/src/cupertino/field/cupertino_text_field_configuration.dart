@@ -66,6 +66,7 @@ class CupertinoTextFieldConfiguration {
   final Brightness? keyboardAppearance;
   final EdgeInsets scrollPadding;
   final bool enableInteractiveSelection;
+  final TextSelectionControls? selectionControls;
 
   /// Creates a CupertinoTextFieldConfiguration
   const CupertinoTextFieldConfiguration({
@@ -104,6 +105,7 @@ class CupertinoTextFieldConfiguration {
     this.keyboardAppearance,
     this.scrollPadding = const EdgeInsets.all(20.0),
     this.enableInteractiveSelection = true,
+    this.selectionControls,
   });
 
   /// Copies the [CupertinoTextFieldConfiguration] and only changes the specified properties
@@ -143,6 +145,7 @@ class CupertinoTextFieldConfiguration {
     Brightness? keyboardAppearance,
     EdgeInsets? scrollPadding,
     bool? enableInteractiveSelection,
+    TextSelectionControls? selectionControls,
   }) {
     return CupertinoTextFieldConfiguration(
       controller: controller ?? this.controller,
@@ -179,7 +182,9 @@ class CupertinoTextFieldConfiguration {
       cursorColor: cursorColor ?? this.cursorColor,
       keyboardAppearance: keyboardAppearance ?? this.keyboardAppearance,
       scrollPadding: scrollPadding ?? this.scrollPadding,
-      enableInteractiveSelection: enableInteractiveSelection ?? this.enableInteractiveSelection,
+      enableInteractiveSelection:
+          enableInteractiveSelection ?? this.enableInteractiveSelection,
+      selectionControls: selectionControls ?? this.selectionControls,
     );
   }
 }

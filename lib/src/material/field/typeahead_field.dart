@@ -867,6 +867,7 @@ class _TypeAheadFieldState<T> extends State<TypeAheadField<T>>
         enableInteractiveSelection:
             widget.textFieldConfiguration.enableInteractiveSelection,
         readOnly: widget.hideKeyboard,
+        selectionControls: widget.textFieldConfiguration.selectionControls,
       ),
     );
   }
